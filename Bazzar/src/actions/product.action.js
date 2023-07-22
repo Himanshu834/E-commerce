@@ -1,0 +1,103 @@
+import axios from "../helpers/axios";
+import { productConstants } from "./constants";
+
+export const getProductsBySlug = (slug) => {
+  console.log(slug);
+  return async (dispatch) => {
+    const res = await axios.get(`/products/${slug}`);
+    if (res.status === 200) {
+      dispatch({
+        type: productConstants.GET_PRODUCTS_BY_SLUG,
+        payload: res.data,
+      });
+    } else {
+    }
+  };
+};
+export const fetchProductsBySearch = (searchValue) => {
+  return async (dispatch) => {
+    dispatch({ type: productConstants.GET_PRODUCTS_BY_SEARCH_REQUEST });
+    const res = await axios.get(`/search/${searchValue}`);
+    if (res.status === 200) {
+      dispatch({
+        type: productConstants.GET_PRODUCTS_BY_SEARCH_SUCCESS,
+        payload: res.data,
+      });
+    } else {
+      dispatch({
+        type: productConstants.GET_PRODUCTS_BY_SEARCH_FAILURE,
+        payload: res.data.error,
+      });
+    }
+  };
+};
+
+export const getProductPage = (payload) => {
+  return async (dispatch) => {
+    try {
+      const { cid, type } = payload.params;
+      dispatch({
+        type: productConstants.GET_PRODUCT_PAGE_REQUEST,
+      });
+      const res = await axios.get(`/page/${cid}/${type}`);
+      // console.log(res);
+      if (res.status === 200) {
+        const { page } = res.data;
+        dispatch({
+          type: productConstants.GET_PRODUCT_PAGE_SUCCESS,
+          payload: { page },
+        });
+      } else {
+        const { error } = res.data;
+        dispatch({
+          type: productConstants.GET_PRODUCT_PAGE_FAILURE,
+          payload: { error },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const getAllProduct = () => {
+  return async (dispatch) => {
+    dispatch({ type: productConstants.GET_ALL_PRODUCT_REQUEST });
+    const res = await axios.get(`product`);
+    if (res.status === 200) {
+      const { product } = res.data;
+      dispatch({
+        type: productConstants.GET_ALL_PRODUCT_SUCCESS,
+        payload: { products: product },
+      });
+    } else {
+      dispatch({
+        type: productConstants.GET_ALL_PRODUCT_FAILURE,
+        payload: { error: res.data.error },
+      });
+    }
+  };
+};
+export const getProductDetailsById = (payload) => {
+  return async (dispatch) => {
+    dispatch({ type: productConstants.GET_PRODUCT_DETAILS_BY_ID_REQUEST });
+    let res;
+    const { productId } = payload.params;
+    res = await axios.get(`/product/${productId}`);
+    console.log(res);
+    try {
+      const { productId } = payload.params;
+      res = await axios.get(`/product/${productId}`);
+      console.log(res);
+      dispatch({
+        type: productConstants.GET_PRODUCT_DETAILS_BY_ID_SUCCESS,
+        payload: { productDetails: res.data.product },
+      });
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type: productConstants.GET_PRODUCT_DETAILS_BY_ID_FAILURE,
+        payload: { error: res.data.error },
+      });
+    }
+  };
+};

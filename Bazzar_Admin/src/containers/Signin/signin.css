@@ -1,0 +1,54 @@
+.signIn,.signUp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+
+}
+input{
+    width: 40rem;
+    border-radius: 3px;
+    border: 1px solid blue;
+    outline: none;
+    padding-left: 1rem;
+    font-size: 14px;
+    height: 35px;
+}
+input:focus{
+    border: 2px solid blue;
+}
+button{
+    width: 5rem;
+    height: 2rem;
+    background:blue;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    font-size: 13px;
+}
+p{
+    font-size: 12px;
+}
+.checkbox{
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+.remember{
+    display: flex;
+    padding: 2px;
+    margin-bottom: -30px;
+}
+.remember p{
+    font-size: 14px;
+}
+.first-last{
+    display: flex;
+}
+.first-last input{
+    width: 19rem;
+    margin-right: 2rem;
+
+}

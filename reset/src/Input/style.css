@@ -1,0 +1,66 @@
+.materialInput{
+    height: 50px;
+    /* border-bottom: 2px solid #2874f0; */
+    position: relative;
+    width: 532px;
+    background: #FFFFFF;
+    /* background-color: red; */
+    margin-top: 20px;
+  }
+  .materialInput input{
+    width: 100%;
+    padding-left: 15px;
+    flex: 1;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 13px;
+    color: black;
+    font-size: 18px;
+    /* outline: none; */
+    /* border: 1px solid #000000; */
+    /* border: none; */
+    z-index: 1;
+    background: transparent;
+    line-height: 50px;
+    font-family: Salsa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  }
+  .materialInput .label{
+    position: absolute;
+    line-height: 30px;
+    /* color: grey; */
+    z-index: 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.1s ease-in-out;
+  }
+  .materialInput .label.focus{
+    /* top: -40px !important; */
+    color: transparent;
+  }
+
+  /* Material Button */
+.materialButton{
+    width: 100%;
+    display: inline-block;
+    padding: 15px;
+    outline: none;
+    background-color: black;
+    color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border: none;
+    cursor: pointer;
+    border-radius: 13px;
+    
+}
+.materialButton .title{
+    font-family: Salsa;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+.materialButton:hover{
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.12);
+}

@@ -1,0 +1,66 @@
+.caContainer {
+  width: 190px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: black; */
+}
+.caContainer:hover {
+  color: blue;
+}
+.caImgContainer {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.caImgContainer > img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.caProductName {
+  font-size: 12px;
+  padding: 10px 0;
+}
+.caProductPrice {
+  font-size: 12px;
+  font-weight: 600;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+}
+.grid > div {
+  background-color: white;
+  /* border: 1px solid black; */
+  text-align: center;
+  /* padding: 20px 0; */
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0px;
+  }
+  .caContainer {
+    width: 150px;
+    height: 300px;
+  }
+  .caImgContainer {
+    width: 150px;
+    height: 200px;
+  }
+  .caImgContainer > img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}

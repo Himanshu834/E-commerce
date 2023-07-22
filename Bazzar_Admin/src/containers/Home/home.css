@@ -1,0 +1,17 @@
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75vh;
+    width: 100%;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #eeee;
+    padding-top: 60px;
+    z-index: -1;
+}

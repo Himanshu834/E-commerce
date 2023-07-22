@@ -1,0 +1,10 @@
+.orderItemContainer{
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #a48aa4;
+    border-radius: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}

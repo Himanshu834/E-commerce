@@ -1,0 +1,4 @@
+/node_modules
+
+# ignoring all the .env files form all the subdirectories
+**/.env
